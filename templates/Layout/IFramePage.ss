@@ -1,13 +1,11 @@
-<% require ThemedCSS(IFramePage) %>
-<% require javascript(jsparty/jquery/jquery.js) %>
-<% require javascript(iframe/javascript/IFramePage.js) %>
-
 <div class="typography">
 	<h2>$Title</h2>
 	
 	$Content
-	<iframe id="IFramePageIFrame" src="$IFrameUrl" $Height>
-		$AlternateContent
-	</iframe>
+	<% if DynamicHeight %>
+		<iframe src="$IFrameUrl" class="iframeautosize" style="width: 100%;">$AlternateContent</iframe>
+	<% else %>
+		<iframe src="$IFrameUrl" style="width: 100%; height: {$FixedHeight}px;">$AlternateContent</iframe>
+	<% end_if %>
 	$BottomContent
 </div>
