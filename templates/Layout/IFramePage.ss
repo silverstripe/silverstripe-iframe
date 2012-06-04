@@ -2,10 +2,9 @@
 	<h2>$Title</h2>
 	
 	$Content
-	<% if DynamicHeight %>
-		<iframe src="$IFrameUrl" class="iframeautosize" style="width: 100%;">$AlternateContent</iframe>
-	<% else %>
-		<iframe src="$IFrameUrl" style="width: 100%; height: {$FixedHeight}px;">$AlternateContent</iframe>
+	<% if IFrameURL %>
+		<span id="Iframepage-loading" style="display: none;">External content is loading...</span>
+		<iframe id="Iframepage-iframe" style="$Style" src="$IFrameURL" class="$Class">$AlternateContent</iframe>
 	<% end_if %>
 	$BottomContent
 </div>
