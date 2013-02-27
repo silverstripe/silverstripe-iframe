@@ -28,15 +28,15 @@ class IFramePage extends Page {
 		$fields = parent::getCMSFields();
 
 		$fields->removeFieldFromTab('Root.Main', 'Content');
-		$fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'));
+		$fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'), 'Metadata');
 		$url->setRightTitle('Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).');
-		$fields->addFieldToTab('Root.Main', new CheckboxField('AutoHeight', 'Auto height (only works with same domain URLs)'));
-		$fields->addFieldToTab('Root.Main', new CheckboxField('AutoWidth', 'Auto width (100% of the available space)'));
-		$fields->addFieldToTab('Root.Main', new NumericField('FixedHeight', 'Fixed height (in pixels)'));
-		$fields->addFieldToTab('Root.Main', new NumericField('FixedWidth', 'Fixed width (in pixels)'));
-		$fields->addFieldToTab('Root.Main', new HtmlEditorField('Content', 'Content (appears above iframe)'));
-		$fields->addFieldToTab('Root.Main', new HtmlEditorField('BottomContent', 'Content (appears below iframe)'));
-		$fields->addFieldToTab('Root.Main', new HtmlEditorField('AlternateContent', 'Alternate Content (appears when user has iframes disabled)'));
+		$fields->addFieldToTab('Root.Main', new CheckboxField('AutoHeight', 'Auto height (only works with same domain URLs)'), 'Metadata');
+		$fields->addFieldToTab('Root.Main', new CheckboxField('AutoWidth', 'Auto width (100% of the available space)'), 'Metadata');
+		$fields->addFieldToTab('Root.Main', new NumericField('FixedHeight', 'Fixed height (in pixels)'), 'Metadata');
+		$fields->addFieldToTab('Root.Main', new NumericField('FixedWidth', 'Fixed width (in pixels)'), 'Metadata');
+		$fields->addFieldToTab('Root.Main', new HtmlEditorField('Content', 'Content (appears above iframe)'), 'Metadata');
+		$fields->addFieldToTab('Root.Main', new HtmlEditorField('BottomContent', 'Content (appears below iframe)'), 'Metadata');
+		$fields->addFieldToTab('Root.Main', new HtmlEditorField('AlternateContent', 'Alternate Content (appears when user has iframes disabled)'), 'Metadata');
 
 		return $fields;
 	}
