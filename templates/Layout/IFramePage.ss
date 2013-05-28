@@ -3,7 +3,7 @@
 	
 	$Content
 	<% if IFrameURL %>
-		<span id="Iframepage-loading" style="display: none;">External content is loading...</span>
+		<span id="Iframepage-loading" style="display: none;">Loading content...</span>
 		<iframe id="Iframepage-iframe" style="$Style" src="$IFrameURL" class="$Class">$AlternateContent</iframe>
 	<% end_if %>
 	$BottomContent
