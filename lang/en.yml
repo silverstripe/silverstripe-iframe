@@ -1,0 +1,8 @@
+en:
+  IFramePage:
+    DESCRIPTION: 'Embeds an iframe into the body of the page.'
+    PLURALNAME: 'Base Pages'
+    SINGULARNAME: 'I Frame Page'
+  SiteTree:
+    PLURALNAME: Pages
+    SINGULARNAME: Page
