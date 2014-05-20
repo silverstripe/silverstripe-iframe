@@ -1,0 +1,11 @@
+ru:
+  IFramePage:
+    DESCRIPTION: 'Вставка элемента iframe в основную область страницы.'
+    PLURALNAME: 'Страницы iframe'
+    SINGULARNAME: 'Страница iframe'
+  IframePage:
+    ExternalNote: 'Примечание: содержимое в разделе ниже может быть получено из внешнего источника (HTML-элемент IFRAME) и может воспроизводиться программами для чтения экрана некорректно.'
+    Loading: 'Идет загрузка...'
+  SiteTree:
+    PLURALNAME: Страницы
+    SINGULARNAME: Страница
