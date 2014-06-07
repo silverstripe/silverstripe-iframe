@@ -12,7 +12,8 @@ class IFramePage extends Page {
 		'FixedHeight' => 'Int(500)',
 		'FixedWidth' => 'Int(0)',
 		'AlternateContent' => 'HTMLText',
-		'BottomContent' => 'HTMLText'
+		'BottomContent' => 'HTMLText',
+		'ForceProtocol' => 'Varchar',
 	);
 
 	static $defaults = array(
@@ -30,6 +31,14 @@ class IFramePage extends Page {
 		$fields->removeFieldFromTab('Root.Main', 'Content');
 		$fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'), 'Metadata');
 		$url->setRightTitle('Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).');
+		$fields->addFieldToTab(
+			'Root.Main',
+			DropdownField::create('ForceProtocol', 'Force protocol?')
+				->setSource(array('http://' => 'http://', 'https://' => 'https://'))
+				->setEmptyString('')
+				->setDescription('Avoids mixed content warnings when iframe content is just available under a specific protocol'),
+			'Metadata'
+		);
 		$fields->addFieldToTab('Root.Main', new CheckboxField('AutoHeight', 'Auto height (only works with same domain URLs)'), 'Metadata');
 		$fields->addFieldToTab('Root.Main', new CheckboxField('AutoWidth', 'Auto width (100% of the available space)'), 'Metadata');
 		$fields->addFieldToTab('Root.Main', new NumericField('FixedHeight', 'Fixed height (in pixels)'), 'Metadata');
@@ -98,6 +107,14 @@ class IFramePage extends Page {
 class IFramePage_Controller extends Page_Controller {
 	function init() {
 		parent::init();
+
+		if($this->ForceProtocol) {
+			if($this->ForceProtocol == 'http://' && Director::protocol() != 'http://') {
+				return $this->redirect(preg_replace('#https://#', 'http://', $this->AbsoluteLink()));
+			} else if($this->ForceProtocol == 'https://' && Director::protocol() != 'https://') {
+				return $this->redirect(preg_replace('#http://#', 'https://', $this->AbsoluteLink()));
+			}
+		}
 
 		if ($this->IFrameURL) {
 			Requirements::javascript('iframe/javascript/iframe_page.js');
