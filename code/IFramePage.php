@@ -73,6 +73,26 @@ class IFramePage extends Page {
 
 		return $style;
 	}
+
+	/**
+	 * Ensure that the IFrameURL is a valid url and prevents XSS
+	 * 
+	 * @throws ValidationException
+	 * @return ValidationResult
+	 */
+	public function validate() {
+		$result = parent::validate();
+
+		//whitelist allowed URL schemes
+		$allowed_schemes = array('http', 'https');
+		if($matches = parse_url($this->IFrameURL)) {
+			if(isset($matches['scheme']) && !in_array($matches['scheme'], $allowed_schemes)) {
+				$result->error(_t('IFramePage.VALIDATION.BANNEDURLSCHEME', "This URL scheme is not allowed."));
+			}
+		}
+
+		return $result;
+	}
 }
 
 class IFramePage_Controller extends Page_Controller {
