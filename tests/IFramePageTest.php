@@ -1,6 +1,17 @@
 <?php
 
 class IFramePageTest extends SapphireTest {
+
+	public function setUp() {
+		parent::setUp();
+		Config::nest();
+	}
+
+	public function tearDown() {
+		Config::unnest();
+		parent::tearDown();
+	}
+
 	function testGetClass() {
 		$iframe = new IFramePage();
 		$iframe->AutoHeight = 1;
