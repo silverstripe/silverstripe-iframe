@@ -10,7 +10,7 @@ if (typeof jQuery!=='undefined') {
 		loading.show();
 
 		$(function() {
-			iframe.load(function() {
+			$( window ).load(function() {
 				// Iframe content has been loaded
 				loading.hide();
 				iframe.show();
