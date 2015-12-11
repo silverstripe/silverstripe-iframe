@@ -16,7 +16,7 @@ browser. e.g. http://mysite.com/dev/build?flush=all
 
 ## Instructions
 
-For usage instructions see [user manual](docs/en/user.md).
+For usage instructions see [user manual](docs/en/userguide/index.md).
 
 ## Contributing
 
