@@ -1,11 +1,20 @@
-# IFrame usage
+title: IFrame page
+summary: Embed IFrames in your website without adding code
+
+# IFrame
+
+## In this section:
+
+* Create and modify an IFrame
+
+## Before we begin
+Make sure that your SilverStripe installation has the [IFrame](http://addons.silverstripe.org/add-ons/silverstripe/iframe) module installed.
 
 This module provides a page type that you can use to embed IFrames in your website.
 
 ## Creating an IFrame
 
-IFrame pages are created like any other page. When you create a new page, selected the **I Frame Page** from the list of
-available page types.
+IFrame pages are created like any other page. When you create a new page, selected the **IFrame Page** from the list of available page types.
 
 There are a few new fields on an IFrame page.
 
