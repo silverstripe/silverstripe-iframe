@@ -1,0 +1,7 @@
+fa_IR:
+  IFramePage:
+    PLURALNAME: 'صفحه اصلی'
+    SINGULARNAME: 'صفحه I Frame'
+  SiteTree:
+    PLURALNAME: صفحات
+    SINGULARNAME: صفحه
