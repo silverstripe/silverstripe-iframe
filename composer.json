@@ -10,9 +10,13 @@
 			"email": "mateusz@silverstripe.com"
 		}
 	],
-	"require":
-	{
+	"require": {
 		"silverstripe/framework": "3.*",
 		"silverstripe/cms": "3.*"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
 	}
 }
