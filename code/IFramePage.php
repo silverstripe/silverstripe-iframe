@@ -25,13 +25,13 @@ class IFramePage extends Page
     );
 
     public static $description = 'Embeds an iframe into the body of the page.';
-    
+
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
 
         $fields->removeFieldFromTab('Root.Main', 'Content');
-        $fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'), 'Metadata');
+        $fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'));
         $url->setRightTitle('Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).');
         $fields->addFieldToTab(
             'Root.Main',
@@ -41,14 +41,25 @@ class IFramePage extends Page
                 ->setDescription('Avoids mixed content warnings when iframe content is just available under a specific protocol'),
             'Metadata'
         );
-        $fields->addFieldToTab('Root.Main', new CheckboxField('AutoHeight', 'Auto height (only works with same domain URLs)'), 'Metadata');
-        $fields->addFieldToTab('Root.Main', new CheckboxField('AutoWidth', 'Auto width (100% of the available space)'), 'Metadata');
-        $fields->addFieldToTab('Root.Main', new NumericField('FixedHeight', 'Fixed height (in pixels)'), 'Metadata');
-        $fields->addFieldToTab('Root.Main', new NumericField('FixedWidth', 'Fixed width (in pixels)'), 'Metadata');
-        $fields->addFieldToTab('Root.Main', new HtmlEditorField('Content', 'Content (appears above iframe)'), 'Metadata');
-        $fields->addFieldToTab('Root.Main', new HtmlEditorField('BottomContent', 'Content (appears below iframe)'), 'Metadata');
-        $fields->addFieldToTab('Root.Main', new HtmlEditorField('AlternateContent', 'Alternate Content (appears when user has iframes disabled)'), 'Metadata');
+        $fields->addFieldToTab('Root.Main', new CheckboxField('AutoHeight', 'Auto height (only works with same domain URLs)'));
+        $fields->addFieldToTab('Root.Main', new CheckboxField('AutoWidth', 'Auto width (100% of the available space)'));
+        $fields->addFieldToTab('Root.Main', new NumericField('FixedHeight', 'Fixed height (in pixels)'));
+        $fields->addFieldToTab('Root.Main', new NumericField('FixedWidth', 'Fixed width (in pixels)'));
+        $fields->addFieldToTab('Root.Main', new HtmlEditorField('Content', 'Content (appears above iframe)'));
+        $fields->addFieldToTab('Root.Main', new HtmlEditorField('BottomContent', 'Content (appears below iframe)'));
+        $fields->addFieldToTab('Root.Main', new HtmlEditorField('AlternateContent', 'Alternate Content (appears when user has iframes disabled)'));
 
+        // Move the Metadata field to last position, but make a check for it's
+        // existence first.
+        //
+        // See https://github.com/silverstripe-labs/silverstripe-iframe/issues/18
+        $mainTab = $fields->findOrMakeTab('Root.Main');
+        $mainTabFields = $mainTab->FieldList();
+        $metaDataField = $mainTabFields->fieldByName('Metadata');
+        if ($metaDataField) {
+            $mainTabFields->removeByName('Metadata');
+            $mainTabFields->push($metaDataField);
+        }
         return $fields;
     }
 
@@ -90,7 +101,7 @@ class IFramePage extends Page
 
     /**
      * Ensure that the IFrameURL is a valid url and prevents XSS
-     * 
+     *
      * @throws ValidationException
      * @return ValidationResult
      */
