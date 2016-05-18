@@ -1,0 +1,6 @@
+sk:
+  IFramePage:
+    PLURALNAME: 'Základné stránky'
+  SiteTree:
+    PLURALNAME: Stránky
+    SINGULARNAME: Stránka
