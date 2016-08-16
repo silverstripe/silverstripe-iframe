@@ -3,6 +3,8 @@ ru:
     DESCRIPTION: 'Вставка элемента iframe в основную область страницы.'
     PLURALNAME: 'Страницы iframe'
     SINGULARNAME: 'Страница iframe'
+    VALIDATION:
+      BANNEDURLSCHEME: 'Данный тип ссылки запрещён.'
   IframePage:
     ExternalNote: 'Примечание: содержимое в разделе ниже может быть получено из внешнего источника (HTML-элемент IFRAME) и может воспроизводиться программами для чтения экрана некорректно.'
     Loading: 'Идет загрузка...'
