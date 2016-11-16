@@ -1,7 +1,7 @@
 fi:
   IFramePage:
     DESCRIPTION: 'Upottaa iframen sivulle.'
-    PLURALNAME: 'Pohjasivut'
+    PLURALNAME: Pohjasivut
     SINGULARNAME: 'I Frame sivu'
   IframePage:
     ExternalNote: 'Huomioithan, että seuraava sisältöosio on upotettu ulkopuolisesta lähteestä (HTML-kielen IFRAME-käskyllä) ja saattaa aiheuttaa odottamattoman käyttökokemuksen selaimessa.'
