@@ -2,6 +2,8 @@
 
 class IFramePageTest extends SapphireTest
 {
+    protected $usesDatabase = true;
+    
     public function setUp()
     {
         parent::setUp();
