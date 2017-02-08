@@ -3,6 +3,8 @@ fi:
     DESCRIPTION: 'Upottaa iframen sivulle.'
     PLURALNAME: Pohjasivut
     SINGULARNAME: 'I Frame sivu'
+    VALIDATION:
+      BANNEDURLSCHEME: 'Tämä URL-skeema ei ole sallittu.'
   IframePage:
     ExternalNote: 'Huomioithan, että seuraava sisältöosio on upotettu ulkopuolisesta lähteestä (HTML-kielen IFRAME-käskyllä) ja saattaa aiheuttaa odottamattoman käyttökokemuksen selaimessa.'
     Loading: 'Ladataan sisältöä...'
