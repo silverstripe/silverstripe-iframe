@@ -3,11 +3,6 @@ lt_LT:
     DESCRIPTION: 'Įtraukia iframe į puslapio body dalį'
     PLURALNAME: 'Baziniai puslapiai'
     SINGULARNAME: 'Iframe puslapis'
-    VALIDATION:
-      BANNEDURLSCHEME: 'Tokia URL schema neleidžiama'
-  IframePage:
+    VALIDATION_BANNEDURLSCHEME: 'Tokia URL schema neleidžiama'
     ExternalNote: 'Prašome atkreipti dėmesį, jog šis turinys galimai yra iš išorinių šaltinių (IFRAME žyma HTML dokumente), tad jis gali sukeiti nepatogumų vartotojams su ekrano skaitytuvais.'
     Loading: 'Turinys siunčiamas...'
-  SiteTree:
-    PLURALNAME: Puslapiai
-    SINGULARNAME: Puslapis
