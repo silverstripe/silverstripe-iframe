@@ -3,9 +3,5 @@ mi:
     DESCRIPTION: 'Ka tāmau i tētahi ī-tāpare ki roto i te tinana o te whārangi.'
     PLURALNAME: 'Ngā Whārangi Pūtake'
     SINGULARNAME: 'Whārangi Ī-Tāpare'
-  IframePage:
     ExternalNote: 'Me mōhio ka tukuna pea te wāhanga ihirangi e whai nei i tētahi pūtake ā-waho (he Ī-TĀPARE e pā ana ki te HTML), ā, ka whakarato pea i ngā wheako rerekē mō ngā pūpānui mata.'
     Loading: 'Uta ihirangi ana...'
-  SiteTree:
-    PLURALNAME: Ngā Whārangi
-    SINGULARNAME: Whārangi

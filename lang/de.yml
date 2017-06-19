@@ -3,11 +3,6 @@ de:
     DESCRIPTION: 'Bettet eine andere Seite mittels Iframe ein.'
     PLURALNAME: 'Iframe Seiten'
     SINGULARNAME: 'Iframe Seite'
-    VALIDATION:
-      BANNEDURLSCHEME: 'Dieses URL-Schema ist nicht erlaubt.'
-  IframePage:
+    VALIDATION_BANNEDURLSCHEME: 'Dieses URL-Schema ist nicht erlaubt.'
     ExternalNote: 'Bitte beachten Sie, dass der folgende Inhalt von einer anderen Quelle eingebunden wird (mittels IFRAME) und dadurch evtl. Probleme bei Screenreadern auftreten können.'
     Loading: 'Lade Inhalt...'
-  SiteTree:
-    PLURALNAME: Seiten
-    SINGULARNAME: Seite

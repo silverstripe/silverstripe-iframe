@@ -1,4 +1,12 @@
 <?php
+namespace SilverStripe\IFrame;
+
+use Page;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\NumericField;
+use SilverStripe\Forms\HTMLEditor\HtmlEditorField;
 /**
  * Iframe page type embeds an iframe of URL of choice into the page.
  * CMS editor can choose width, height, or set it to attempt automatic size configuration.
@@ -6,7 +14,7 @@
 
 class IFramePage extends Page
 {
-    public static $db = array(
+    private static $db = array(
         'IFrameURL' => 'Text',
         'AutoHeight' => 'Boolean(1)',
         'AutoWidth' => 'Boolean(1)',
@@ -17,14 +25,14 @@ class IFramePage extends Page
         'ForceProtocol' => 'Varchar',
     );
 
-    public static $defaults = array(
+    private static $defaults = array(
         'AutoHeight' => '1',
         'AutoWidth' => '1',
         'FixedHeight' => '500',
         'FixedWidth' => '0'
     );
 
-    public static $description = 'Embeds an iframe into the body of the page.';
+    private static $description = 'Embeds an iframe into the body of the page.';
 
     public function getCMSFields()
     {
@@ -113,30 +121,10 @@ class IFramePage extends Page
         $allowed_schemes = array('http', 'https');
         if ($matches = parse_url($this->IFrameURL)) {
             if (isset($matches['scheme']) && !in_array($matches['scheme'], $allowed_schemes)) {
-                $result->error(_t('IFramePage.VALIDATION.BANNEDURLSCHEME', "This URL scheme is not allowed."));
+                $result->addError(_t('IFramePage.VALIDATION_BANNEDURLSCHEME', "This URL scheme is not allowed."));
             }
         }
 
         return $result;
-    }
-}
-
-class IFramePage_Controller extends Page_Controller
-{
-    public function init()
-    {
-        parent::init();
-
-        if ($this->ForceProtocol) {
-            if ($this->ForceProtocol == 'http://' && Director::protocol() != 'http://') {
-                return $this->redirect(preg_replace('#https://#', 'http://', $this->AbsoluteLink()));
-            } elseif ($this->ForceProtocol == 'https://' && Director::protocol() != 'https://') {
-                return $this->redirect(preg_replace('#http://#', 'https://', $this->AbsoluteLink()));
-            }
-        }
-
-        if ($this->IFrameURL) {
-            Requirements::javascript('iframe/javascript/iframe_page.js');
-        }
     }
 }

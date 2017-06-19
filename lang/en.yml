@@ -3,11 +3,6 @@ en:
     DESCRIPTION: 'Embeds an iframe into the body of the page.'
     PLURALNAME: 'Base Pages'
     SINGULARNAME: 'I Frame Page'
-    VALIDATION:
-      BANNEDURLSCHEME: 'This URL scheme is not allowed.'
-  IframePage:
+    VALIDATION_BANNEDURLSCHEME: 'This URL scheme is not allowed.'
     ExternalNote: 'Please note the following section of content is possibly being delivered from an external source (IFRAME in HTML terms), and may present unusual experiences for screen readers.'
     Loading: 'Loading content...'
-  SiteTree:
-    PLURALNAME: Pages
-    SINGULARNAME: Page

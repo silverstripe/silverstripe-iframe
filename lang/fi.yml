@@ -3,9 +3,5 @@ fi:
     DESCRIPTION: 'Upottaa iframen sivulle.'
     PLURALNAME: 'Pohjasivut'
     SINGULARNAME: 'I Frame sivu'
-  IframePage:
     ExternalNote: 'Huomioithan, että seuraava sisältöosio on upotettu ulkopuolisesta lähteestä (HTML-kielen IFRAME-käskyllä) ja saattaa aiheuttaa odottamattoman käyttökokemuksen selaimessa.'
     Loading: 'Ladataan sisältöä...'
-  SiteTree:
-    PLURALNAME: Sivut
-    SINGULARNAME: Sivu

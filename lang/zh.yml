@@ -3,9 +3,5 @@ zh:
     DESCRIPTION: '将 iframe 嵌入页面主体'
     PLURALNAME: '基页'
     SINGULARNAME: 'IFRAME 页面'
-  IframePage:
     ExternalNote: '请注意，下列内容可能来自外部来源（HTML 中的 IFRAME 框架），在屏幕上阅读时可能会产生不一致的体验。'
     Loading: '正在加载内容……'
-  SiteTree:
-    PLURALNAME: 页面
-    SINGULARNAME: 页面

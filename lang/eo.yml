@@ -3,11 +3,6 @@ eo:
     DESCRIPTION: 'Enkorpigas je iframe (kadro) en la korpon de la paĝo.'
     PLURALNAME: 'Bazaj paĝoj'
     SINGULARNAME: 'Paĝo de iframe (kadro)'
-    VALIDATION:
-      BANNEDURLSCHEME: 'Tiu URL-skemo be estas permesita.'
-  IframePage:
+    VALIDATION_BANNEDURLSCHEME: 'Tiu URL-skemo be estas permesita.'
     ExternalNote: 'Bonvole notu ke la sekva sekcio de enhavo eble liveriĝas el ekstera fonto (IFRAME en HTML-termoj), kaj eble prezentos nekutimajn spertojn por ekranlegantoj.'
     Loading: 'Ŝargas enhavon...'
-  SiteTree:
-    PLURALNAME: Paĝoj
-    SINGULARNAME: Paĝo
