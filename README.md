@@ -1,20 +1,9 @@
 # IFrame module
-[![Build Status](https://travis-ci.org/silverstripe-labs/silverstripe-iframe.svg?branch=master)](https://travis-ci.org/silverstripe-labs/silverstripe-iframe)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe-labs/silverstripe-iframe/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe-labs/silverstripe-iframe/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/silverstripe-labs/silverstripe-iframe/badges/build.png?b=master)](https://scrutinizer-ci.com/g/silverstripe-labs/silverstripe-iframe/build-status/master)
-[![codecov.io](https://codecov.io/github/silverstripe-labs/silverstripe-iframe/coverage.svg?branch=master)](https://codecov.io/github/silverstripe-labs/silverstripe-iframe?branch=master)
-
-[![Latest Stable Version](https://poser.pugx.org/silverstripe/iframe/version)](https://packagist.org/packages/silverstripe/iframe)
-[![Latest Unstable Version](https://poser.pugx.org/silverstripe/iframe/v/unstable)](//packagist.org/packages/silverstripe/iframe)
-[![Total Downloads](https://poser.pugx.org/silverstripe/iframe/downloads)](https://packagist.org/packages/silverstripe/iframe)
-[![License](https://poser.pugx.org/silverstripe/iframe/license)](https://packagist.org/packages/silverstripe/iframe)
-[![Monthly Downloads](https://poser.pugx.org/silverstripe/iframe/d/monthly)](https://packagist.org/packages/silverstripe/iframe)
-[![Daily Downloads](https://poser.pugx.org/silverstripe/iframe/d/daily)](https://packagist.org/packages/silverstripe/iframe)
-
-[![Dependency Status](https://www.versioneye.com/php/silverstripe:iframe/badge.svg)](https://www.versioneye.com/php/silverstripe:iframe)
-[![Reference Status](https://www.versioneye.com/php/silverstripe:iframe/reference_badge.svg?style=flat)](https://www.versioneye.com/php/silverstripe:iframe/references)
-
-![codecov.io](https://codecov.io/github/silverstripe-labs/silverstripe-iframe/branch.svg?branch=master)
+[![Build Status](https://travis-ci.org/silverstripe/silverstripe-iframe.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-iframe)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-iframe/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-iframe/?branch=master)
+[![codecov](https://codecov.io/gh/silverstripe/silverstripe-iframe/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-iframe)
+[![Version](http://img.shields.io/packagist/v/silverstripe/iframe.svg?style=flat)](https://packagist.org/packages/silverstripe/silverstripe-iframe)
+[![License](http://img.shields.io/packagist/l/silverstripe/iframe.svg?style=flat)](LICENSE.md)
 
 ## Introduction
 
@@ -23,16 +12,18 @@ custom code.
 
 ## Requirements
 
- * SilverStripe 3.0
+ * SilverStripe ^4.0
+
+**Note:** For a SilverStripe 3.x compatible version, please use [the 1.x release line](https://github.com/silverstripe/silverstripe-iframe/tree/1.0).
 
 ## Installation
 
-Copy the iframe directory into your SilverStripe project, then append dev/build?flush=all to the website URL in your
-browser. e.g. http://mysite.com/dev/build?flush=all
+Run `composer require silverstripe/iframe`, then append dev/build?flush=all to the website URL in your
+browser. e.g. http://mysite.test/dev/build?flush=all
 
 ## Instructions
 
-For usage instructions see [user manual](docs/en/userguide/index.md).
+For usage instructions see the [user manual](docs/en/userguide/index.md).
 
 ## Contributing
 
