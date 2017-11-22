@@ -1,33 +1,35 @@
 {
-	"name": "silverstripe/iframe",
-	"description": "Add an iFrame pagetype to SilverStripe, to show content from another website",
-	"type": "silverstripe-module",
-	"keywords": ["silverstripe"],
-	"license": "BSD-3-Clause",
-	"authors": [
-		{
-			"name": "Mateusz Uzdowski",
-			"email": "mateusz@silverstripe.com"
-		}
-	],
-	"require": {
-		"silverstripe/framework": "^4@dev",
-		"silverstripe/cms": "^4@dev"
-	},
-	"require-dev": {
-		"phpunit/PHPUnit": "^5.7"
-	},
-	"autoload": {
+    "name": "silverstripe/iframe",
+    "description": "Add an iFrame pagetype to SilverStripe, to show content from another website",
+    "type": "silverstripe-vendormodule",
+    "keywords": ["silverstripe"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Mateusz Uzdowski",
+            "email": "mateusz@silverstripe.com"
+        }
+    ],
+    "require": {
+        "silverstripe/recipe-cms": "^1"
+    },
+    "require-dev": {
+        "phpunit/PHPUnit": "^5.7"
+    },
+    "autoload": {
         "psr-4": {
             "SilverStripe\\IFrame\\": "code/",
             "SilverStripe\\IFrame\\Tests\\": "tests/"
         }
     },
-	"extra": {
-		"branch-alias": {
-			"dev-master": "2.0.x-dev"
-		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "extra": {
+        "expose": [
+            "javascript"
+        ],
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
