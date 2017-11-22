@@ -7,6 +7,7 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\HTMLEditor\HtmlEditorField;
+
 /**
  * Iframe page type embeds an iframe of URL of choice into the page.
  * CMS editor can choose width, height, or set it to attempt automatic size configuration.
@@ -40,22 +41,28 @@ class IFramePage extends Page
 
         $fields->removeFieldFromTab('Root.Main', 'Content');
         $fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'));
-        $url->setRightTitle('Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).');
+        $url->setRightTitle(
+            'Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).'
+        );
         $fields->addFieldToTab(
             'Root.Main',
             DropdownField::create('ForceProtocol', 'Force protocol?')
                 ->setSource(array('http://' => 'http://', 'https://' => 'https://'))
                 ->setEmptyString('')
-                ->setDescription('Avoids mixed content warnings when iframe content is just available under a specific protocol'),
+                ->setDescription(
+                    'Avoids mixed content warnings when iframe content is just available under a specific protocol'
+                ),
             'Metadata'
         );
-        $fields->addFieldToTab('Root.Main', new CheckboxField('AutoHeight', 'Auto height (only works with same domain URLs)'));
-        $fields->addFieldToTab('Root.Main', new CheckboxField('AutoWidth', 'Auto width (100% of the available space)'));
-        $fields->addFieldToTab('Root.Main', new NumericField('FixedHeight', 'Fixed height (in pixels)'));
-        $fields->addFieldToTab('Root.Main', new NumericField('FixedWidth', 'Fixed width (in pixels)'));
-        $fields->addFieldToTab('Root.Main', new HtmlEditorField('Content', 'Content (appears above iframe)'));
-        $fields->addFieldToTab('Root.Main', new HtmlEditorField('BottomContent', 'Content (appears below iframe)'));
-        $fields->addFieldToTab('Root.Main', new HtmlEditorField('AlternateContent', 'Alternate Content (appears when user has iframes disabled)'));
+        $fields->addFieldsToTab('Root.Main', [
+            CheckboxField::create('AutoHeight', 'Auto height (only works with same domain URLs)'),
+            CheckboxField::create('AutoWidth', 'Auto width (100% of the available space)'),
+            NumericField::create('FixedHeight', 'Fixed height (in pixels)'),
+            NumericField::create('FixedWidth', 'Fixed width (in pixels)'),
+            HtmlEditorField::create('Content', 'Content (appears above iframe)'),
+            HtmlEditorField::create('BottomContent', 'Content (appears below iframe)'),
+            HtmlEditorField::create('AlternateContent', 'Alternate Content (appears when user has iframes disabled)')
+        ]);
 
         // Move the Metadata field to last position, but make a check for it's
         // existence first.

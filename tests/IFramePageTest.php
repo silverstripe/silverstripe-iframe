@@ -12,18 +12,6 @@ class IFramePageTest extends SapphireTest
 {
     protected $usesDatabase = true;
 
-    public function setUp()
-    {
-        parent::setUp();
-        Config::nest();
-    }
-
-    public function tearDown()
-    {
-        Config::unnest();
-        parent::tearDown();
-    }
-
     public function testGetClass()
     {
         $iframe = new IFramePage();
@@ -109,40 +97,40 @@ class IFramePageTest extends SapphireTest
         $page->URLSegment = 'iframe';
         $page->IFrameURL = 'http://target.com';
 
-        Config::inst()->update(Director::class, 'alternate_protocol', 'http');
-        Config::inst()->update(Director::class, 'alternate_base_url', 'http://host.com');
+        Config::modify()->set(Director::class, 'alternate_protocol', 'http');
+        Config::modify()->set(Director::class, 'alternate_base_url', 'http://host.com');
         $page->ForceProtocol = '';
         $controller = new IFramePageController($page);
         $controller->doInit();
         $response = $controller->getResponse();
         $this->assertNull($response->getHeader('Location'));
 
-        Config::inst()->update(Director::class, 'alternate_protocol', 'https');
-        Config::inst()->update(Director::class, 'alternate_base_url', 'https://host.com');
+        Config::modify()->set(Director::class, 'alternate_protocol', 'https');
+        Config::modify()->set(Director::class, 'alternate_base_url', 'https://host.com');
         $page->ForceProtocol = '';
         $controller = new IFramePageController($page);
         $controller->doInit();
         $response = $controller->getResponse();
         $this->assertNull($response->getHeader('Location'));
 
-        Config::inst()->update(Director::class, 'alternate_protocol', 'http');
-        Config::inst()->update(Director::class, 'alternate_base_url', 'http://host.com');
+        Config::modify()->set(Director::class, 'alternate_protocol', 'http');
+        Config::modify()->set(Director::class, 'alternate_base_url', 'http://host.com');
         $page->ForceProtocol = 'http://';
         $controller = new IFramePageController($page);
         $controller->doInit();
         $response = $controller->getResponse();
         $this->assertNull($response->getHeader('Location'));
 
-        Config::inst()->update(Director::class, 'alternate_protocol', 'http');
-        Config::inst()->update(Director::class, 'alternate_base_url', 'http://host.com');
+        Config::modify()->set(Director::class, 'alternate_protocol', 'http');
+        Config::modify()->set(Director::class, 'alternate_base_url', 'http://host.com');
         $page->ForceProtocol = 'https://';
         $controller = new IFramePageController($page);
         $controller->doInit();
         $response = $controller->getResponse();
         $this->assertEquals($response->getHeader('Location'), 'https://host.com/iframe/');
 
-        Config::inst()->update(Director::class, 'alternate_protocol', 'https');
-        Config::inst()->update(Director::class, 'alternate_base_url', 'https://host.com');
+        Config::modify()->set(Director::class, 'alternate_protocol', 'https');
+        Config::modify()->set(Director::class, 'alternate_base_url', 'https://host.com');
         $page->ForceProtocol = 'http://';
         $controller = new IFramePageController($page);
         $controller->doInit();
