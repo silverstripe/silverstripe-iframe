@@ -1,5 +1,5 @@
 de:
-  IFramePage:
+  SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Bettet eine andere Seite mittels Iframe ein.'
     PLURALNAME: 'Iframe Seiten'
     SINGULARNAME: 'Iframe Seite'

@@ -1,5 +1,5 @@
 ar:
-  IFramePage:
+  SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'يقوم بتضمين آى فريم بداخل جسم الصفحة.'
     PLURALNAME: 'الصفحات الرئيسية'
     SINGULARNAME: 'صفحة الإطار'

@@ -1,5 +1,5 @@
 ru:
-  IFramePage:
+  SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Вставка элемента iframe в основную область страницы.'
     PLURALNAME: 'Страницы iframe'
     SINGULARNAME: 'Страница iframe'
