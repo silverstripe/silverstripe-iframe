@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SilverStripe\\IFrame\\": "code/",
+            "SilverStripe\\IFrame\\": "src/",
             "SilverStripe\\IFrame\\Tests\\": "tests/"
         }
     },
