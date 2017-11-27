@@ -35,6 +35,8 @@ class IFramePage extends Page
 
     private static $description = 'Embeds an iframe into the body of the page.';
 
+    private static $singular_name = 'IFrame Page';
+
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
@@ -128,7 +130,7 @@ class IFramePage extends Page
         $allowed_schemes = array('http', 'https');
         if ($matches = parse_url($this->IFrameURL)) {
             if (isset($matches['scheme']) && !in_array($matches['scheme'], $allowed_schemes)) {
-                $result->addError(_t('IFramePage.VALIDATION_BANNEDURLSCHEME', "This URL scheme is not allowed."));
+                $result->addError(_t(__CLASS__ . '.VALIDATION_BANNEDURLSCHEME', "This URL scheme is not allowed."));
             }
         }
 

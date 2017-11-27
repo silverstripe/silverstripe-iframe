@@ -1,5 +1,5 @@
 lt_LT:
-  IFramePage:
+  SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Įtraukia iframe į puslapio body dalį'
     PLURALNAME: 'Baziniai puslapiai'
     SINGULARNAME: 'Iframe puslapis'

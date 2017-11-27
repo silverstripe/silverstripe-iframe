@@ -1,5 +1,5 @@
 eo:
-  IFramePage:
+  SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Enkorpigas je iframe (kadro) en la korpon de la paĝo.'
     PLURALNAME: 'Bazaj paĝoj'
     SINGULARNAME: 'Paĝo de iframe (kadro)'

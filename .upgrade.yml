@@ -1,0 +1,3 @@
+mappings:
+  IFramePage: SilverStripe\IFrame\IFramePage
+  IFramePage_Controller: SilverStripe\IFrame\IFramePageController

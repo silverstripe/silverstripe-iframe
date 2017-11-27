@@ -1,5 +1,5 @@
 zh:
-  IFramePage:
+  SilverStripe\IFrame\IFramePage:
     DESCRIPTION: '将 iframe 嵌入页面主体'
     PLURALNAME: 基页
     SINGULARNAME: 'IFRAME 页面'
