@@ -33,6 +33,8 @@ class IFramePage extends Page
         'FixedWidth' => '0'
     );
 
+    private static $table_name = 'IFramePage';
+
     private static $description = 'Embeds an iframe into the body of the page.';
 
     private static $singular_name = 'IFrame Page';
