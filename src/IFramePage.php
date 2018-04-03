@@ -7,6 +7,7 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\HTMLEditor\HtmlEditorField;
+use SilverStripe\ORM\FieldType\DBField;
 
 /**
  * Iframe page type embeds an iframe of URL of choice into the page.
@@ -46,7 +47,10 @@ class IFramePage extends Page
         $fields->removeFieldFromTab('Root.Main', 'Content');
         $fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'));
         $url->setRightTitle(
-            'Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).'
+            DBField::create_field(
+                'HTMLText',
+                'Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).'
+            )
         );
         $fields->addFieldToTab(
             'Root.Main',
