@@ -1,0 +1,6 @@
+---
+Name: iframelegacy
+---
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    IFramePage: 'SilverStripe\IFrame\IFramePage'
