@@ -11,7 +11,9 @@ The IFrame module provides an IFrame page type in the CMS which allows you to em
 resorting to custom code in your templates or TinyMCE instance.
  
 This can help if you have `iframe` disabled in TinyMCE's [valid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements/)
-and do not want to to re-enable it in for a single/specific use-case.
+and do not want to to re-enable it in for a single/specific use-case. It's also possible that using a Web Application
+Firewall (WAF) may block page save requests that contain iframe elements in HTML content, which using this module would
+circumvent.
 
 Various attributes of the IFrame can be controlled from CMS fields, such as size and content that surrounds the
 IFrame itself.
