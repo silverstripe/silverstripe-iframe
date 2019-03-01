@@ -2,11 +2,11 @@
 
 namespace SilverStripe\IFrame;
 
-use SilverStripe\CMS\Controllers\ContentController;
+use PageController;
 use SilverStripe\Control\Director;
 use SilverStripe\View\Requirements;
 
-class IFramePageController extends ContentController
+class IFramePageController extends PageController
 {
     protected function init()
     {
