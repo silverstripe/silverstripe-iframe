@@ -8,6 +8,8 @@ use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\HTMLEditor\HtmlEditorField;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\ValidationException;
+use SilverStripe\ORM\ValidationResult;
 
 /**
  * Iframe page type embeds an iframe of URL of choice into the page.
@@ -18,6 +20,7 @@ class IFramePage extends Page
 {
     private static $db = array(
         'IFrameURL' => 'Text',
+        'IFrameTitle' => 'Varchar',
         'AutoHeight' => 'Boolean(1)',
         'AutoWidth' => 'Boolean(1)',
         'FixedHeight' => 'Int(500)',
@@ -45,7 +48,11 @@ class IFramePage extends Page
         $fields = parent::getCMSFields();
 
         $fields->removeFieldFromTab('Root.Main', 'Content');
-        $fields->addFieldToTab('Root.Main', $url = new TextField('IFrameURL', 'Iframe URL'));
+        $fields->addFieldsToTab('Root.Main', [
+            $url = TextField::create('IFrameURL', 'Iframe URL'),
+            TextField::create('IFrameTitle', 'Iframe Title')
+                ->setDescription(_t(__CLASS__ . '.TITLE_DESCRIPTION', 'Used to identify the contents of the Iframe')),
+        ]);
         $url->setRightTitle(
             DBField::create_field(
                 'HTMLText',
