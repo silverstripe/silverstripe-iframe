@@ -50,8 +50,8 @@ class IFramePage extends Page
         $fields->removeFieldFromTab('Root.Main', 'Content');
         $fields->addFieldsToTab('Root.Main', [
             $url = TextField::create('IFrameURL', 'Iframe URL'),
-            TextField::create('IFrameTitle', 'Iframe Title')
-                ->setDescription(_t(__CLASS__ . '.TITLE_DESCRIPTION', 'Used to identify the contents of the Iframe')),
+            TextField::create('IFrameTitle', 'Description of contents (title)')
+                ->setDescription(_t(__CLASS__ . '.TITLE_DESCRIPTION', 'Used by screen readers')),
         ]);
         $url->setRightTitle(
             DBField::create_field(
