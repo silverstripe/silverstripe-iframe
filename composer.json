@@ -16,5 +16,8 @@
         "silverstripe/framework": "3.*",
         "silverstripe/cms": "3.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
     "extra": []
 }
