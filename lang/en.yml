@@ -8,4 +8,5 @@ en:
       one: 'An IFrame Page'
       other: '{count} IFrame Pages'
     SINGULARNAME: 'IFrame Page'
+    TITLE_DESCRIPTION: 'Used by screen readers'
     VALIDATION_BANNEDURLSCHEME: 'This URL scheme is not allowed.'

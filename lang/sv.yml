@@ -1,3 +1,11 @@
 sv:
   SilverStripe\IFrame\IFramePage:
-    PLURALNAME: 'Bas sidor'
+    DESCRIPTION: 'Lägger in en iframe i sidans body'
+    ExternalNote: 'Vänligen observera att följande sektion med innehåll antagligen levereras från en extern källa (IFRAME) och kan innebära problem för skärmläsare.'
+    Loading: 'Laddar innehåll...'
+    PLURALNAME: IFrame-sidor
+    PLURALS:
+      one: 'En IFrame-sida'
+      other: '{count} IFrame-sidor'
+    SINGULARNAME: IFrame-sida
+    VALIDATION_BANNEDURLSCHEME: 'Det här URL-schemat är inte tillåtet'
