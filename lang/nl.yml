@@ -1,9 +1,7 @@
 nl:
   SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Voegt een iframe toe aan de pagina.'
-    PLURALNAME: 'Basis pagina''s'
-    SINGULARNAME: 'I Frame Pagina'
-    VALIDATION:
-      BANNEDURLSCHEME: 'Dit URL schema is niet toegestaan.'
     ExternalNote: 'Gelieve op te merken dat de volgende sectie mogelijk kan aangeleverd worden door een externe bron (IFRAME in HTML termen) en dat dit een ongewone ervaring kan leveren voor scherm lezers.'
     Loading: 'Laden van inhoud...'
+    PLURALNAME: 'Basis pagina''s'
+    SINGULARNAME: 'I Frame Pagina'
