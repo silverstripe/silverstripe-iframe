@@ -8,4 +8,5 @@ eo:
       one: '{count} IFrame-paĝo'
       other: '{count} IFrame-paĝoj'
     SINGULARNAME: 'Paĝo de iframe (kadro)'
+    TITLE_DESCRIPTION: 'Uzata de ekranlegiloj'
     VALIDATION_BANNEDURLSCHEME: 'Tiu URL-skemo be estas permesita.'
