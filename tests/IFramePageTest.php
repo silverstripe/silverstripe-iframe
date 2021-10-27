@@ -19,12 +19,12 @@ class IFramePageTest extends SapphireTest
         $iframe->AutoHeight = 1;
         $iframe->getClass();
 
-        $this->assertContains('iframepage-height-auto', $iframe->getClass());
+        $this->assertStringContainsString('iframepage-height-auto', $iframe->getClass());
 
         $iframe->AutoHeight = 0;
         $iframe->getClass();
 
-        $this->assertNotContains('iframepage-height-auto', $iframe->getClass());
+        $this->assertStringNotContainsString('iframepage-height-auto', $iframe->getClass());
     }
 
     public function testGetStyle()
@@ -33,19 +33,19 @@ class IFramePageTest extends SapphireTest
 
         $iframe->FixedHeight = 0;
         $iframe->getStyle();
-        $this->assertContains('height: 800px', $iframe->getStyle(), 'Height defaults to 800 if not set.');
+        $this->assertStringContainsString('height: 800px', $iframe->getStyle(), 'Height defaults to 800 if not set.');
 
         $iframe->FixedHeight = 100;
         $iframe->getStyle();
-        $this->assertContains('height: 100px', $iframe->getStyle(), 'Fixed height is settable');
+        $this->assertStringContainsString('height: 100px', $iframe->getStyle(), 'Fixed height is settable');
 
         $iframe->AutoWidth = 1;
         $iframe->FixedWidth = '200';
-        $this->assertContains('width: 100%', $iframe->getStyle(), 'Auto width overrides fixed width');
+        $this->assertStringContainsString('width: 100%', $iframe->getStyle(), 'Auto width overrides fixed width');
 
         $iframe->AutoWidth = 0;
         $iframe->FixedWidth = '200';
-        $this->assertContains('width: 200px', $iframe->getStyle(), 'Fixed width is settable');
+        $this->assertStringContainsString('width: 200px', $iframe->getStyle(), 'Fixed width is settable');
     }
 
     public function testAllowedUrls()
@@ -80,12 +80,12 @@ class IFramePageTest extends SapphireTest
         foreach ($tests['allowed'] as $url) {
             $iframe->IFrameURL = $url;
             $iframe->write();
-            $this->assertContains($iframe->IFrameURL, $url);
+            $this->assertStringContainsString($iframe->IFrameURL, $url);
         }
 
         foreach ($tests['banned'] as $url) {
             $iframe->IFrameURL = $url;
-            $this->setExpectedException(ValidationException::class);
+            $this->expectException(ValidationException::class);
             $iframe->write();
         }
     }
