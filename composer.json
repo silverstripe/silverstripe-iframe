@@ -2,7 +2,9 @@
     "name": "silverstripe/iframe",
     "description": "Add an iFrame pagetype to SilverStripe, to show content from another website",
     "type": "silverstripe-vendormodule",
-    "keywords": ["silverstripe"],
+    "keywords": [
+        "silverstripe"
+    ],
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -27,10 +29,7 @@
     "extra": {
         "expose": [
             "javascript"
-        ],
-        "branch-alias": {
-            "dev-master": "2.x-dev"
-        }
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true
