@@ -142,8 +142,8 @@ class IFramePage extends Page
 
         //whitelist allowed URL schemes
         $allowed_schemes = array('http', 'https');
-        if ($matches = parse_url($this->IFrameURL)) {
-            if (isset($matches['scheme']) && !in_array($matches['scheme'], $allowed_schemes)) {
+        if ($matches = parse_url($this->IFrameURL ?? '')) {
+            if (isset($matches['scheme']) && !in_array($matches['scheme'], $allowed_schemes ?? [])) {
                 $result->addError(_t(__CLASS__ . '.VALIDATION_BANNEDURLSCHEME', "This URL scheme is not allowed."));
             }
         }
