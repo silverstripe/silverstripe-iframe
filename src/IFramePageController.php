@@ -16,8 +16,8 @@ class IFramePageController extends PageController
         if ($desiredProtocol && $currentProtocol !== $desiredProtocol) {
             $enforcedLocation = preg_replace(
                 "#^${currentProtocol}#",
-                $desiredProtocol,
-                $this->AbsoluteLink()
+                $desiredProtocol ?? '',
+                $this->AbsoluteLink() ?? ''
             );
             return $this->redirect($enforcedLocation);
         }
