@@ -1,6 +1,6 @@
 # IFrame module
 
-[![Build Status](https://api.travis-ci.com/silverstripe/silverstripe-iframe.svg?branch=2)](https://travis-ci.com/silverstripe/silverstripe-iframe)
+[![CI](https://github.com/silverstripe/silverstripe-iframe/actions/workflows/ci.yml/badge.svg)](https://github.com/silverstripe/silverstripe-iframe/actions/workflows/ci.yml)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-iframe/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-iframe/?branch=master)
 [![codecov](https://codecov.io/gh/silverstripe/silverstripe-iframe/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-iframe)
 [![SilverStripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
