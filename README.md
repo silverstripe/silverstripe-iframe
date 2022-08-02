@@ -1,11 +1,7 @@
 # IFrame module
 
 [![CI](https://github.com/silverstripe/silverstripe-iframe/actions/workflows/ci.yml/badge.svg)](https://github.com/silverstripe/silverstripe-iframe/actions/workflows/ci.yml)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-iframe/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-iframe/?branch=master)
-[![codecov](https://codecov.io/gh/silverstripe/silverstripe-iframe/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-iframe)
-[![SilverStripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
-[![Version](http://img.shields.io/packagist/v/silverstripe/iframe.svg?style=flat)](https://packagist.org/packages/silverstripe/silverstripe-iframe)
-[![License](http://img.shields.io/packagist/l/silverstripe/iframe.svg?style=flat)](LICENSE.md)
+[![Silverstripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
 
 ## Introduction
 
@@ -22,9 +18,9 @@ IFrame itself.
 
 ## Requirements
 
- * SilverStripe ^4.0
+ * Silverstripe ^4.0
 
-**Note:** For a SilverStripe 3.x compatible version, please use [the 1.x release line](https://github.com/silverstripe/silverstripe-iframe/tree/1.0).
+**Note:** For a Silverstripe 3.x compatible version, please use [the 1.x release line](https://github.com/silverstripe/silverstripe-iframe/tree/1.0).
 
 ## Installation
 
