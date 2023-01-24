@@ -128,7 +128,7 @@ class IFramePageTest extends SapphireTest
         $controller = new IFramePageController($page);
         $controller->doInit();
         $response = $controller->getResponse();
-        $this->assertEquals($response->getHeader('Location'), 'https://host.com/iframe/');
+        $this->assertEquals('https://host.com/iframe', $response->getHeader('Location'));
 
         Config::modify()->set(Director::class, 'alternate_protocol', 'https');
         Config::modify()->set(Director::class, 'alternate_base_url', 'https://host.com');
@@ -136,7 +136,7 @@ class IFramePageTest extends SapphireTest
         $controller = new IFramePageController($page);
         $controller->doInit();
         $response = $controller->getResponse();
-        $this->assertEquals($response->getHeader('Location'), 'http://host.com/iframe/');
+        $this->assertEquals('http://host.com/iframe', $response->getHeader('Location'));
 
         $_SERVER = $origServer;
     }
