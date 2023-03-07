@@ -1,0 +1,6 @@
+hr:
+  SilverStripe\IFrame\IFramePage:
+    DESCRIPTION: 'Dodaje iframe u sadržaj stranice.'
+    ExternalNote: 'Molimo budite svjesni da sljedeća sekcija sadržaja se moguće prikazuje iz vanjskih izvora (IFRAME kao HTML), i može uzrokovati čudno iskustvo'
+    Loading: 'Učitavam sadržaj...'
+    VALIDATION_BANNEDURLSCHEME: 'Ova URL shema nije dozvoljena.'
