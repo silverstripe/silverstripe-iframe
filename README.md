@@ -16,21 +16,11 @@ circumvent.
 Various attributes of the IFrame can be controlled from CMS fields, such as size and content that surrounds the
 IFrame itself.
 
-## Requirements
-
- * Silverstripe ^4.0
-
-**Note:** For a Silverstripe 3.x compatible version, please use [the 1.x release line](https://github.com/silverstripe/silverstripe-iframe/tree/1.0).
-
 ## Installation
 
-Install with Composer:
-
-```
+```sh
 composer require silverstripe/iframe
 ```
-
-After installation, ensure you run `dev/build?flush` in either your browser or via command line.
 
 ## Instructions
 
