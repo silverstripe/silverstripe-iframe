@@ -1,10 +1,10 @@
 fi:
   SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Upottaa iframen sivulle.'
+    ExternalNote: 'Huomioithan, että seuraava sisältöosio on upotettu ulkopuolisesta lähteestä (HTML-kielen IFRAME-käskyllä) ja saattaa aiheuttaa odottamattoman käyttökokemuksen selaimessa.'
+    Loading: 'Ladataan sisältöä...'
     PLURALNAME: Pohjasivut
     SINGULARNAME: 'I Frame sivu'
     VALIDATION:
       BANNEDURLSCHEME: 'Tämä URL-skeema ei ole sallittu.'
-    ExternalNote: 'Huomioithan, että seuraava sisältöosio on upotettu ulkopuolisesta lähteestä (HTML-kielen IFRAME-käskyllä) ja saattaa aiheuttaa odottamattoman käyttökokemuksen selaimessa.'
-    Loading: 'Ladataan sisältöä...'
     VALIDATION_BANNEDURLSCHEME: 'Tämä URL-skeema ei ole sallittu.'
