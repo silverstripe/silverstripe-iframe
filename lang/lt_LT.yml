@@ -1,8 +1,8 @@
 lt_LT:
   SilverStripe\IFrame\IFramePage:
     DESCRIPTION: 'Įtraukia iframe į puslapio body dalį'
+    ExternalNote: 'Prašome atkreipti dėmesį, jog šis turinys galimai yra iš išorinių šaltinių (IFRAME žyma HTML dokumente), tad jis gali sukeiti nepatogumų vartotojams su ekrano skaitytuvais.'
+    Loading: 'Turinys siunčiamas...'
     PLURALNAME: 'Baziniai puslapiai'
     SINGULARNAME: 'Iframe puslapis'
     VALIDATION_BANNEDURLSCHEME: 'Tokia URL schema neleidžiama'
-    ExternalNote: 'Prašome atkreipti dėmesį, jog šis turinys galimai yra iš išorinių šaltinių (IFRAME žyma HTML dokumente), tad jis gali sukeiti nepatogumų vartotojams su ekrano skaitytuvais.'
-    Loading: 'Turinys siunčiamas...'
