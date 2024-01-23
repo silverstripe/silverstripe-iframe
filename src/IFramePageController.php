@@ -6,6 +6,9 @@ use PageController;
 use SilverStripe\Control\Director;
 use SilverStripe\View\Requirements;
 
+/**
+ * @extends PageController<IFramePage>
+ */
 class IFramePageController extends PageController
 {
     protected function init()
