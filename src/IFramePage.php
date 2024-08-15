@@ -3,11 +3,9 @@
 namespace SilverStripe\IFrame;
 
 use Page;
-use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\DropdownField;
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\NumericField;
-use SilverStripe\Forms\HTMLEditor\HtmlEditorField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\ValidationException;
 use SilverStripe\ORM\ValidationResult;
@@ -20,15 +18,15 @@ use SilverStripe\ORM\ValidationResult;
 class IFramePage extends Page
 {
     private static $db = array(
+        'ForceProtocol' => 'Varchar',
         'IFrameURL' => 'Text',
         'IFrameTitle' => 'Varchar',
         'AutoHeight' => 'Boolean(1)',
         'AutoWidth' => 'Boolean(1)',
         'FixedHeight' => 'Int(500)',
         'FixedWidth' => 'Int(0)',
-        'AlternateContent' => 'HTMLText',
         'BottomContent' => 'HTMLText',
-        'ForceProtocol' => 'Varchar',
+        'AlternateContent' => 'HTMLText',
     );
 
     private static $defaults = array(
@@ -46,52 +44,40 @@ class IFramePage extends Page
 
     public function getCMSFields()
     {
-        $fields = parent::getCMSFields();
+        $this->beforeUpdateCMSFields(function (FieldList $fields) {
+            $fields->replaceField(
+                'IFrameURL',
+                TextField::create('IFrameURL', $this->fieldLabel('IFrameURL'))
+                ->setRightTitle(
+                    DBField::create_field(
+                        'HTMLText',
+                        'Can be absolute (<em>http://silverstripe.com</em>) '
+                        . 'or relative to this site (<em>about-us</em>).'
+                    )
+                )
+            );
+            $fields->dataFieldByName('IFrameTitle')
+                ->setDescription(_t(__CLASS__ . '.TITLE_DESCRIPTION', 'Used by screen readers'));
+            $fields->replaceField(
+                'ForceProtocol',
+                DropdownField::create('ForceProtocol', $this->fieldLabel('ForceProtocol'))
+                    ->setSource(array('http://' => 'http://', 'https://' => 'https://'))
+                    ->setEmptyString('')
+                    ->setDescription(
+                        'Avoids mixed content warnings when iframe content is just available under a specific protocol'
+                    )
+            );
 
-        $fields->removeFieldFromTab('Root.Main', 'Content');
-        $fields->addFieldsToTab('Root.Main', [
-            $url = TextField::create('IFrameURL', 'Iframe URL'),
-            TextField::create('IFrameTitle', 'Description of contents (title)')
-                ->setDescription(_t(__CLASS__ . '.TITLE_DESCRIPTION', 'Used by screen readers')),
-        ]);
-        $url->setRightTitle(
-            DBField::create_field(
-                'HTMLText',
-                'Can be absolute (<em>http://silverstripe.com</em>) or relative to this site (<em>about-us</em>).'
-            )
-        );
-        $fields->addFieldToTab(
-            'Root.Main',
-            DropdownField::create('ForceProtocol', 'Force protocol?')
-                ->setSource(array('http://' => 'http://', 'https://' => 'https://'))
-                ->setEmptyString('')
-                ->setDescription(
-                    'Avoids mixed content warnings when iframe content is just available under a specific protocol'
-                ),
-            'Metadata'
-        );
-        $fields->addFieldsToTab('Root.Main', [
-            CheckboxField::create('AutoHeight', 'Auto height (only works with same domain URLs)'),
-            CheckboxField::create('AutoWidth', 'Auto width (100% of the available space)'),
-            NumericField::create('FixedHeight', 'Fixed height (in pixels)'),
-            NumericField::create('FixedWidth', 'Fixed width (in pixels)'),
-            HtmlEditorField::create('Content', 'Content (appears above iframe)'),
-            HtmlEditorField::create('BottomContent', 'Content (appears below iframe)'),
-            HtmlEditorField::create('AlternateContent', 'Alternate Content (appears when user has iframes disabled)')
-        ]);
-
-        // Move the Metadata field to last position, but make a check for it's
-        // existence first.
-        //
-        // See https://github.com/silverstripe-labs/silverstripe-iframe/issues/18
-        $mainTab = $fields->findOrMakeTab('Root.Main');
-        $mainTabFields = $mainTab->FieldList();
-        $metaDataField = $mainTabFields->fieldByName('Metadata');
-        if ($metaDataField) {
-            $mainTabFields->removeByName('Metadata');
-            $mainTabFields->push($metaDataField);
-        }
-        return $fields;
+            $contentField = $fields->dataFieldByName('Content');
+            if ($contentField) {
+                $fields->removeByName('Content');
+                $contentField->setTitle(_t(__CLASS__ . '.db_Content', 'Content (appears above iframe)'));
+                $fields->addFieldToTab('Root.Main', $contentField, 'BottomContent');
+            }
+            $fields->dataFieldByName('BottomContent')?->addExtraClass('stacked');
+            $fields->dataFieldByName('AlternateContent')?->addExtraClass('stacked');
+        });
+        return parent::getCMSFields();
     }
 
     /**
