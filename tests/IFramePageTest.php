@@ -4,7 +4,7 @@ namespace SilverStripe\IFrame\Tests;
 
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Control\Director;
-use SilverStripe\ORM\ValidationException;
+use SilverStripe\Core\Validation\ValidationException;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\IFrame\IFramePage;
 use SilverStripe\IFrame\IFramePageController;
