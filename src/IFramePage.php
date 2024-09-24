@@ -3,12 +3,13 @@
 namespace SilverStripe\IFrame;
 
 use Page;
+use SilverStripe\Core\Validation\ConstraintValidator;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\FieldType\DBField;
-use SilverStripe\Core\Validation\ValidationException;
 use SilverStripe\Core\Validation\ValidationResult;
+use Symfony\Component\Validator\Constraints\Url;
 
 /**
  * Iframe page type embeds an iframe of URL of choice into the page.
@@ -119,21 +120,21 @@ class IFramePage extends Page
     /**
      * Ensure that the IFrameURL is a valid url and prevents XSS
      *
-     * @throws ValidationException
      * @return ValidationResult
      */
     public function validate()
     {
-        $result = parent::validate();
+        $fullResult = parent::validate();
 
-        //whitelist allowed URL schemes
-        $allowed_schemes = array('http', 'https');
-        if ($matches = parse_url($this->IFrameURL ?? '')) {
-            if (isset($matches['scheme']) && !in_array($matches['scheme'], $allowed_schemes ?? [])) {
-                $result->addError(_t(__CLASS__ . '.VALIDATION_BANNEDURLSCHEME', "This URL scheme is not allowed."));
-            }
-        }
+        $allowedSchemes = ['http', 'https'];
+        $message = _t(__CLASS__ . '.VALIDATION_URL', 'Please enter a valid URL');
+        $result = ConstraintValidator::validate(
+            $this->value,
+            new Url(message: $message, protocols: $allowedSchemes),
+            $this->getName()
+        );
+        $fullResult->combineAnd($result);
 
-        return $result;
+        return $fullResult;
     }
 }
