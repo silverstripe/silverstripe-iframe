@@ -38,7 +38,12 @@ class IFramePage extends Page
 
     private static $table_name = 'IFramePage';
 
+    /**
+     * @deprecated 5.4.0 use class_description instead.
+     */
     private static $description = 'Embeds an iframe into the body of the page.';
+
+    private static $class_description = 'Embeds an iframe into the body of the page.';
 
     private static $singular_name = 'IFrame Page';
 
