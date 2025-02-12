@@ -1,5 +1,6 @@
 fi:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Upottaa iframen sivulle.'
     DESCRIPTION: 'Upottaa iframen sivulle.'
     ExternalNote: 'Huomioithan, että seuraava sisältöosio on upotettu ulkopuolisesta lähteestä (HTML-kielen IFRAME-käskyllä) ja saattaa aiheuttaa odottamattoman käyttökokemuksen selaimessa.'
     Loading: 'Ladataan sisältöä...'

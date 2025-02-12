@@ -1,5 +1,6 @@
 mi:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Ka tāmau i tētahi ī-tāpare ki roto i te tinana o te whārangi.'
     DESCRIPTION: 'Ka tāmau i tētahi ī-tāpare ki roto i te tinana o te whārangi.'
     ExternalNote: 'Me mōhio ka tukuna pea te wāhanga ihirangi e whai nei i tētahi pūtake ā-waho (he Ī-TĀPARE e pā ana ki te HTML), ā, ka whakarato pea i ngā wheako rerekē mō ngā pūpānui mata.'
     Loading: 'Uta ihirangi ana...'
