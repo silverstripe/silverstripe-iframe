@@ -1,5 +1,6 @@
 hr:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Dodaje iframe u sadržaj stranice.'
     DESCRIPTION: 'Dodaje iframe u sadržaj stranice.'
     ExternalNote: 'Molimo budite svjesni da sljedeća sekcija sadržaja se moguće prikazuje iz vanjskih izvora (IFRAME kao HTML), i može uzrokovati čudno iskustvo'
     Loading: 'Učitavam sadržaj...'

@@ -1,5 +1,6 @@
 en:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Embeds an iframe into the body of the page.'
     DESCRIPTION: 'Embeds an iframe into the body of the page.'
     ExternalNote: 'Please note the following section of content is possibly being delivered from an external source (IFRAME in HTML terms), and may present unusual experiences for screen readers.'
     Loading: 'Loading content...'
