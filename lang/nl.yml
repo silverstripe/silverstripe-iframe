@@ -1,5 +1,6 @@
 nl:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Voegt een iframe toe aan de pagina.'
     DESCRIPTION: 'Voegt een iframe toe aan de pagina.'
     ExternalNote: 'Gelieve op te merken dat de volgende sectie mogelijk kan aangeleverd worden door een externe bron (IFRAME in HTML termen) en dat dit een ongewone ervaring kan leveren voor scherm lezers.'
     Loading: 'Laden van inhoud...'

@@ -1,5 +1,6 @@
 sk:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Vloží prvok iframe do tela stránky.'
     DESCRIPTION: 'Vloží prvok iframe do tela stránky.'
     ExternalNote: 'Upozorňujeme, že nasledujúca časť obsahu je pravdepodobne dodávaná z externého zdroja (IFRAME v jazyku HTML). Toto môže predstavovať určité problémy pre čítačky obrazovky.'
     Loading: 'Prebieha načítavanie obsahu...'

@@ -1,5 +1,6 @@
 de:
   SilverStripe\IFrame\IFramePage:
+    CLASS_DESCRIPTION: 'Bettet eine andere Seite mittels Iframe ein.'
     DESCRIPTION: 'Bettet eine andere Seite mittels Iframe ein.'
     ExternalNote: 'Bitte beachten Sie, dass der folgende Inhalt von einer anderen Quelle eingebunden wird (mittels IFRAME) und dadurch evtl. Probleme bei Screenreadern auftreten können.'
     Loading: 'Lade Inhalt...'
