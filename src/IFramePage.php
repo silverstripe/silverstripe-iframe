@@ -122,7 +122,7 @@ class IFramePage extends Page
      * @throws ValidationException
      * @return ValidationResult
      */
-    public function validate()
+    public function validate(): ValidationResult
     {
         $result = parent::validate();
 
